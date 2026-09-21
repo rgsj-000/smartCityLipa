@@ -1,0 +1,192 @@
+{
+  "type": "FeatureCollection",
+  "name": "facilities",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:EPSG::32651"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "FAC_ID": "F001",
+        "FAC_NAME": "Amihan Elementary School",
+        "FAC_TYPE": "School",
+        "CAPACITY": 450,
+        "STATUS": "Operational",
+        "BRGY_CODE": "SYN001"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          365000,
+          1539300
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FAC_ID": "F002",
+        "FAC_NAME": "North Health Station",
+        "FAC_TYPE": "Health",
+        "CAPACITY": 80,
+        "STATUS": "Operational",
+        "BRGY_CODE": "SYN001"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          365500,
+          1538600
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FAC_ID": "F003",
+        "FAC_NAME": "Banaba Covered Court",
+        "FAC_TYPE": "Evacuation",
+        "CAPACITY": 600,
+        "STATUS": "Operational",
+        "BRGY_CODE": "SYN002"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          367100,
+          1539000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FAC_ID": "F004",
+        "FAC_NAME": "Banaba Day Care",
+        "FAC_TYPE": "Day Care",
+        "CAPACITY": 90,
+        "STATUS": "Needs Inspection",
+        "BRGY_CODE": "SYN002"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          367600,
+          1538450
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FAC_ID": "F005",
+        "FAC_NAME": "Duhat High School",
+        "FAC_TYPE": "School",
+        "CAPACITY": 900,
+        "STATUS": "Operational",
+        "BRGY_CODE": "SYN003"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          369000,
+          1539100
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FAC_ID": "F006",
+        "FAC_NAME": "Ilang-Ilang Hall",
+        "FAC_TYPE": "Government",
+        "CAPACITY": 180,
+        "STATUS": "Operational",
+        "BRGY_CODE": "SYN004"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          364900,
+          1536900
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FAC_ID": "F007",
+        "FAC_NAME": "Maligaya Gym",
+        "FAC_TYPE": "Evacuation",
+        "CAPACITY": 700,
+        "STATUS": "Operational",
+        "BRGY_CODE": "SYN005"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          367000,
+          1537000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FAC_ID": "F008",
+        "FAC_NAME": "Maligaya Clinic",
+        "FAC_TYPE": "Health",
+        "CAPACITY": 60,
+        "STATUS": "Operational",
+        "BRGY_CODE": "SYN005"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          367550,
+          1537550
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FAC_ID": "F009",
+        "FAC_NAME": "Sampaguita School",
+        "FAC_TYPE": "School",
+        "CAPACITY": 750,
+        "STATUS": "Needs Inspection",
+        "BRGY_CODE": "SYN006"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          368850,
+          1536900
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FAC_ID": "F010",
+        "FAC_NAME": "South Response Hub",
+        "FAC_TYPE": "Emergency",
+        "CAPACITY": 120,
+        "STATUS": "Operational",
+        "BRGY_CODE": "SYN006"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          369600,
+          1537600
+        ]
+      }
+    }
+  ]
+}

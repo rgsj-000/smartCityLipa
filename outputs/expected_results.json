@@ -1,0 +1,53 @@
+{
+  "training_data_status": "synthetic_training_only",
+  "accountability_statement": "AI assists. QGIS verifies. People decide.",
+  "ACT02": {
+    "boundary_tests": {
+      "4999": "Low",
+      "5000": "Medium",
+      "10000": "Medium",
+      "10001": "High",
+      "null": "Unknown"
+    },
+    "verification_method": "Use the QGIS expression preview, temporarily substitute each literal for POP_TOTAL, read the preview result, and do not save the literal tests."
+  },
+  "ACT05": {
+    "method": "Polygon bounding-box intersection for the supplied rectangular synthetic layers",
+    "barangay_hazard_intersections": {
+      "Amihan": [
+        "Moderate"
+      ],
+      "Banaba": [
+        "Moderate"
+      ],
+      "Duhat": [],
+      "Ilang-Ilang": [
+        "Moderate"
+      ],
+      "Maligaya": [
+        "High",
+        "Moderate"
+      ],
+      "Sampaguita": [
+        "High"
+      ]
+    },
+    "hazard_records": [
+      {
+        "HAZ_ID": "H001",
+        "HAZARD": "Flood",
+        "LEVEL": "High",
+        "SOURCE": "Synthetic training model",
+        "REF_DATE": "2026-09-01"
+      },
+      {
+        "HAZ_ID": "H002",
+        "HAZARD": "Flood",
+        "LEVEL": "Moderate",
+        "SOURCE": "Synthetic training model",
+        "REF_DATE": "2026-09-01"
+      }
+    ],
+    "limitation": "Intersection shows mapped exposure only. It does not establish damage, risk, urgency, travel time, or an operational priority."
+  }
+}

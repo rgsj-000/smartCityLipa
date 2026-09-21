@@ -1,0 +1,22 @@
+Layer,Field,Description,Data Type,Unit,Possible Values,Source,Notes
+barangays,BRGY_CODE,Barangay identifier,Text,,SYN001 to SYN006,Synthetic,Synthetic training only
+barangays,BRGY_NAME,Barangay name,Text,,Training barangay name,Synthetic,Synthetic training only
+barangays,POP_TOTAL,Total population,Integer,persons,0 or greater,Synthetic,Synthetic training only
+barangays,HH_COUNT,Household count,Integer,households,0 or greater,Synthetic,Synthetic training only
+barangays,AREA_KM2,Polygon area,Decimal,square kilometres,greater than 0,Calculated,Synthetic training only
+barangays,POP_DENS,Population density,Decimal,persons per square kilometre,0 or greater,Calculated,POP_TOTAL / AREA_KM2
+barangays,POP_CLASS,Population class,Text,,"Low, Medium, High",Calculated,Training thresholds only
+facilities,FAC_ID,Facility identifier,Text,,F001 to F010,Synthetic,Unique facility identifier
+facilities,FAC_NAME,Facility name,Text,,Facility name,Synthetic,Synthetic training only
+facilities,FAC_TYPE,Facility category,Text,,"School, Health, Evacuation, Day Care, Government, Emergency",Synthetic,Controlled training list
+facilities,CAPACITY,Illustrative capacity,Integer,persons,0 or greater,Synthetic,Illustrative capacity
+facilities,STATUS,Illustrative operating status,Text,,"Operational, Needs Inspection",Synthetic,Requires verification in real use
+facilities,BRGY_CODE,Barangay identifier,Text,,SYN001 to SYN006,Synthetic,Foreign key to barangays
+roads,ROAD_ID,Road identifier,Text,,R001 to R005,Synthetic,Unique road identifier
+roads,ROAD_NAME,Road name,Text,,Road name,Synthetic,Synthetic training only
+roads,ROAD_CLASS,Road category,Text,,"Primary, Secondary",Synthetic,Training classification
+flood_hazard,HAZ_ID,Hazard polygon identifier,Text,,H001 to H002,Synthetic,Unique hazard identifier
+flood_hazard,HAZARD,Hazard type,Text,,Flood,Synthetic,Training scenario
+flood_hazard,LEVEL,Hazard category,Text,,"Moderate, High",Synthetic,Not an official hazard category
+flood_hazard,SOURCE,Hazard source note,Text,,Source description,Synthetic,Must be replaced in real work
+flood_hazard,REF_DATE,Hazard reference date,Text,ISO date,YYYY-MM-DD,Synthetic,"Reference date, not forecast validity"

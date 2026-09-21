@@ -1,0 +1,83 @@
+{
+  "project": "Lipa City AI + GIS Training Package",
+  "version": "1.0.0",
+  "training_data_status": "synthetic_training_only",
+  "accountability_statement": "AI assists. QGIS verifies. People decide.",
+  "official_program": "GIS Application for Smart Cities Training in Lipa City",
+  "modules": [
+    {
+      "id": "ACT01",
+      "day": 1,
+      "start": "11:15",
+      "duration_minutes": 45,
+      "title": "Understanding Data",
+      "ai_role": "Data understanding",
+      "required_output": "Validated data dictionary",
+      "worksheet": "ACT01_Understanding_Data_Worksheet.docx",
+      "answer_key": "ACT01_Answer_Key.md",
+      "offline_sample": "ACT01_Offline_AI_Response.md"
+    },
+    {
+      "id": "ACT02",
+      "day": 1,
+      "start": "16:30",
+      "duration_minutes": 30,
+      "title": "QGIS Assistant",
+      "ai_role": "QGIS syntax and troubleshooting",
+      "required_output": "Working verified expression or workflow",
+      "worksheet": "ACT02_QGIS_Assistant_Worksheet.docx",
+      "answer_key": "ACT02_Answer_Key.md",
+      "offline_sample": "ACT02_Offline_AI_Response.md"
+    },
+    {
+      "id": "ACT03",
+      "day": 2,
+      "start": "14:00",
+      "duration_minutes": 45,
+      "title": "Analysis Assistant",
+      "ai_role": "Spatial analysis planning",
+      "required_output": "GIS analysis plan",
+      "worksheet": "ACT03_Analysis_Assistant_Worksheet.docx",
+      "answer_key": "ACT03_Answer_Key.md",
+      "offline_sample": "ACT03_Offline_AI_Response.md"
+    },
+    {
+      "id": "ACT04",
+      "day": 2,
+      "start": "16:00",
+      "duration_minutes": 45,
+      "title": "GIS QA and Documentation",
+      "ai_role": "Metadata and quality assurance",
+      "required_output": "Metadata and QA sheet",
+      "worksheet": "ACT04_GIS_QA_Documentation_Worksheet.docx",
+      "answer_key": "ACT04_Answer_Key.md",
+      "offline_sample": "ACT04_Offline_AI_Response.md"
+    },
+    {
+      "id": "ACT05",
+      "day": 3,
+      "start": "10:15",
+      "duration_minutes": 60,
+      "title": "AI-Assisted GIS Decision Support",
+      "ai_role": "Evidence communication",
+      "required_output": "AI-assisted GIS report",
+      "worksheet": "ACT05_Decision_Support_Worksheet.docx",
+      "answer_key": "ACT05_Answer_Key.md",
+      "offline_sample": "ACT05_Offline_AI_Response.md"
+    }
+  ],
+  "fields": {
+    "barangays": ["BRGY_CODE", "BRGY_NAME", "POP_TOTAL", "HH_COUNT", "AREA_KM2", "POP_DENS", "POP_CLASS"],
+    "facilities": ["FAC_ID", "FAC_NAME", "FAC_TYPE", "CAPACITY", "STATUS", "BRGY_CODE"],
+    "roads": ["ROAD_ID", "ROAD_NAME", "ROAD_CLASS"],
+    "hazard": ["HAZ_ID", "HAZARD", "LEVEL", "SOURCE", "REF_DATE"]
+  },
+  "canonical_files": {
+    "qgis_project": "qgis/Lipa_AI_GIS_Training.qgz",
+    "geopackage": "data/processed/lipa_training.gpkg",
+    "population_csv": "data/raw/population.csv",
+    "data_dictionary": "data/reference/data_dictionary.csv",
+    "expressions": "workflows/qgis_expressions.md",
+    "prompt_library": "prompts/ai_gis_prompt_library.md"
+  }
+}
