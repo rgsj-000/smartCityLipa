@@ -8,9 +8,14 @@ on:
       - tests/test_act02_joined_shapefile.py
       - scripts/build_act02_joined_shapefile.py
       - .github/workflows/test-act02-joined-shapefile.yml
+      - data/raw/ACT01_barangay_profile_RAW.csv
+
+permissions:
+  contents: write
 
 jobs:
-  test:
+  test-and-build:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - name: Check out branch
@@ -21,8 +26,53 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install test dependencies
+      - name: Install dependencies
         run: python -m pip install --upgrade pip pytest geopandas pyogrio
 
-      - name: Run ACT02 joined shapefile tests
-        run: pytest -q tests/test_act02_joined_shapefile.py
+      - name: Run full test suite
+        run: pytest -q
+
+      - name: Build Activity 02 joined shapefile
+        run: python scripts/build_act02_joined_shapefile.py
+
+      - name: Verify Activity 02 shapefile package
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import tempfile
+          import zipfile
+          import geopandas as gpd
+
+          package = Path('data/processed/ACT02_lipa_barangays_JOINED_UTM51N_shapefile.zip')
+          assert package.exists(), package
+          with tempfile.TemporaryDirectory() as td:
+              with zipfile.ZipFile(package) as zf:
+                  names = set(zf.namelist())
+                  base = 'ACT02_lipa_barangays_JOINED_UTM51N'
+                  for ext in ('.shp', '.shx', '.dbf', '.prj', '.cpg'):
+                      assert base + ext in names, (ext, sorted(names))
+                  zf.extractall(td)
+              gdf = gpd.read_file(Path(td) / f'{base}.shp')
+              assert len(gdf) == 72
+              assert gdf.crs.to_epsg() == 32651
+              assert list(gdf.columns) == [
+                  'PSGC10', 'BRGY_NAME', 'URBAN_RUR', 'POP2024',
+                  'GEO_STAT', 'GEO_LIMIT', 'geometry'
+              ]
+              assert 'POP_BAND' not in gdf.columns
+              assert int(gdf['POP2024'].sum()) == 387392
+              checks = dict(zip(gdf['BRGY_NAME'], gdf['POP2024']))
+              assert checks['Adya'] == 2144
+              assert checks['Anilao'] == 5019
+              assert checks['Latag'] == 9230
+              assert checks['Balintawak'] == 19063
+          PY
+
+      - name: Commit generated shapefile package
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/processed/ACT02_lipa_barangays_JOINED_UTM51N_shapefile.zip
+          git diff --cached --quiet && exit 0
+          git commit -m "Add ACT02 prejoined Lipa barangay shapefile"
+          git push origin HEAD:act02-joined-shapefile
