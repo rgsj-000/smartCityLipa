@@ -31,7 +31,7 @@ Recommended setup:
 
 ## Training data
 
-The repository now contains two complementary training-data tracks.
+The repository contains two complementary training-data tracks.
 
 ### ACT01 comprehensive exploration datasets
 
@@ -48,13 +48,15 @@ ACT01 uses a broader LGU-style dataset package so participants can explore field
 
 Barangay names, PSGC codes, urban/rural classification, and `population_2024` are based on the Philippine Statistics Authority PSGC City of Lipa listing and 2024 POPCEN values. Fields ending in `_synth`, all ACT01 facility records and coordinates, and all ACT01 service-request records are synthetic training data. See `docs/ACT01_DATASETS.md` and `TRAINING_DATA_NOTICE.md` before using the files.
 
+ACT02 now directly continues from this ACT01 barangay profile. Participants work on an editable QGIS copy of `ACT01_barangay_profile_RAW.csv`, use `population_2024`, and create the training-only text field `population_band_synth`. The Low, Medium, and High bands are exercise rules rather than an official planning classification.
+
 ### Reusable QGIS project
 
-The QGIS project remains a fully synthetic six-barangay training environment. The project uses EPSG:32651, WGS 84 / UTM zone 51N. Its layers are stored in `data/processed/lipa_training.gpkg`:
+The reusable QGIS project remains a fully synthetic six-barangay training environment for the later spatial-analysis activities. The project uses EPSG:32651, WGS 84 / UTM zone 51N. Its layers are stored in `data/processed/lipa_training.gpkg`:
 
 | Layer | Features | Purpose |
 |---|---:|---|
-| barangays | 6 | Population attributes and classification |
+| barangays | 6 | Population and polygon attributes |
 | facilities | 10 | Facility location and status examples |
 | roads | 5 | Accessibility discussion |
 | flood_hazard | 2 | Moderate and high synthetic hazard areas |
@@ -66,10 +68,11 @@ Synthetic values and geometries must not be used for operational decisions.
 1. Download or clone the repository.
 2. Keep the folder structure unchanged.
 3. For ACT01, begin with `data/raw/ACT01_barangay_profile_RAW.csv` and follow `docs/ACT01_DATASETS.md`.
-4. For the reusable QGIS project, open `qgis/Lipa_AI_GIS_Training.qgz`.
-5. Confirm that four QGIS project layers appear and the project CRS is EPSG:32651.
-6. Apply the matching `.qml` file from `qgis/styles` if a layer style does not load.
-7. Open the workflow for the current activity.
+4. For ACT02, use the ACT01 barangay profile already imported during the cleaning session. If it is read only, save or export it as an editable working layer and keep the raw CSV unchanged.
+5. For the reusable QGIS project used by later activities, open `qgis/Lipa_AI_GIS_Training.qgz`.
+6. Confirm that four QGIS project layers appear and the project CRS is EPSG:32651.
+7. Apply the matching `.qml` file from `qgis/styles` if a layer style does not load.
+8. Open the workflow for the current activity.
 
 ## Folder structure
 
@@ -79,7 +82,7 @@ repository root/
   data/processed/           GeoPackage used by the reusable QGIS project
   data/reference/           ACT01 clean/reference data and data dictionaries
   qgis/                     QGIS project and reusable styles
-  outputs/screenshots/      Expected map outputs
+  outputs/screenshots/      Expected spatial-analysis map outputs
   outputs/expected_results.json  Machine-readable ACT02 and ACT05 checks
   scripts/                  Expected-output regeneration script
   workflows/                Five time-boxed activity workflows and expressions
@@ -94,7 +97,7 @@ repository root/
 
 ACT01 starts with unfamiliar fields and realistic sample values. Participants use AI to draft possible meanings and data-quality questions, then validate the draft against the supplied dictionary and actual data. The RAW barangay profile intentionally contains controlled QA issues for discovery.
 
-ACT02 uses AI to explain and improve a QGIS Field Calculator expression. Participants test boundary and null cases before accepting the expression.
+ACT02 continues with the same ACT01 barangay profile. Participants use AI to draft a QGIS Field Calculator expression from `population_2024` to the training-only text field `population_band_synth`, then test boundary and null cases before accepting the expression.
 
 ACT03 starts with an LGU decision question. Participants evaluate an AI-proposed analysis plan and reject unsupported thresholds or spatial assumptions.
 
@@ -104,7 +107,9 @@ ACT05 uses verified QGIS facts to draft a short decision-support report. Partici
 
 ## Reproduce expected results
 
-Run `python scripts/generate_expected_outputs.py` from the repository root to rebuild `outputs/expected_results.json` and `outputs/screenshots/ACT05_01_Decision_Support_Map.png` from the supplied GeoPackage. The ACT05 map reports direct flood-hazard intersections only. It does not assign priority, risk, damage, urgency, or an operational action.
+Run `python scripts/generate_expected_outputs.py` from the repository root. The script reads the ACT01 barangay profile to rebuild the ACT02 boundary and representative-record checks in `outputs/expected_results.json`, then reads the synthetic GeoPackage to rebuild the ACT05 checks and `outputs/screenshots/ACT05_01_Decision_Support_Map.png`.
+
+The ACT05 map reports direct flood-hazard intersections only. It does not assign priority, risk, damage, urgency, or an operational action.
 
 ## Offline delivery
 
@@ -116,6 +121,10 @@ If internet access fails, open the matching file in `facilitator/offline_ai_samp
 
 Keep the QGIS project and `data` folder in their original relative positions. If needed, right-click the broken layer, choose Change Data Source, and select the matching table in `data/processed/lipa_training.gpkg`.
 
+### ACT02 CSV is read only
+
+Do not edit `data/raw/ACT01_barangay_profile_RAW.csv` directly. Save or export the imported profile as an editable working layer before creating `population_band_synth`.
+
 ### Text fields become numbers
 
 Import geographic identifiers such as PSGC codes as text. An identifier is not a quantity and should not be calculated as a number.
@@ -126,11 +135,11 @@ Confirm that the project and layer CRS are appropriate before calculating metric
 
 ### AI gives a different expression
 
-Different syntax may be acceptable if it uses existing fields, handles nulls, produces the required categories, and passes test records. The participant must explain and verify the expression.
+Different syntax may be acceptable if it uses `population_2024`, handles nulls, produces the required training categories, and passes the boundary and representative-record checks. The participant must explain and verify the expression.
 
 ## Maintenance
 
-Update `VERSION` and `training_manifest.json` together. When a canonical field or filename changes, update the QGIS project, workflow, worksheet, answer key, prompt sample, screenshot, and facilitator guide in the same release. Record the change in the repository history.
+Update `VERSION` and `training_manifest.json` together. When a canonical field or filename changes, update the workflow, worksheet, answer key, prompt sample, expected-result checks, presentation, facilitator guide, and any dependent QGIS resource in the same release. Record the change in the repository history.
 
 ## License and attribution
 
