@@ -18,21 +18,21 @@ Use the structure below whenever AI assists a GIS task.
 
 ## ACT01: Data dictionary draft
 
-> Act as a GIS data steward. Review the following fields and sample values from a synthetic training dataset: BRGY_CODE, BRGY_NAME, POP_TOTAL, HH_COUNT, AREA_KM2, POP_DENS, and POP_CLASS. Draft a table with possible meaning, likely data type, unit, possible values, data-quality questions, and confidence. Mark any meaning that cannot be confirmed from the names and samples alone. Do not present inferred meanings as official definitions.
+> Act as a GIS data steward. Review only the supplied fields and sample rows from `ACT01_barangay_profile_RAW.csv`. The profile includes official PSA reference fields such as `psgc_10_digit`, `correspondence_code`, `barangay_name`, `urban_rural`, and `population_2024`, plus fields ending in `_synth` for training. Draft a table with field name, possible meaning, likely data type, unit or allowed values, data-quality question, and confidence. Mark every claim that is not confirmed by the supplied reference dictionary as Needs confirmation. Do not invent a source, date, definition, or official status.
 
 Verification questions:
 
 1. Did AI invent an official source or definition?
-2. Do the proposed types preserve identifiers such as BRGY_CODE as text?
-3. Which meanings need confirmation from the data owner?
+2. Are identifier fields such as `psgc_10_digit` and `correspondence_code` preserved correctly?
+3. Which `_synth` fields or meanings still need confirmation from the supplied documentation?
 
 ## ACT02: QGIS expression
 
-> Act as a QGIS 3.34 assistant. In Field Calculator, create the text field POP_CLASS from integer field POP_TOTAL. Return Low below 5,000, Medium from 5,000 through 10,000, High above 10,000, and Unknown for null. Provide one QGIS expression, explain each condition, and list boundary test values. Use only the stated fields.
+> Act as a QGIS 3.34 assistant. Continue from the ACT01 barangay profile. In Field Calculator, create the text field `population_band_synth` using only integer field `population_2024`. For this training exercise, return Low below 5,000, Medium from 5,000 through 10,000, High above 10,000, and Unknown for null. Provide one QGIS expression, explain each condition, and list the boundary tests 4,999, 5,000, 10,000, 10,001, and null. Do not present these bands as an official LGU classification.
 
 ## ACT02: Troubleshooting
 
-> In QGIS 3.34, my population layer uses EPSG:32651 and field POP_TOTAL. The Field Calculator expression runs but 5,000 is classified as Low. Review this expression and explain the exact boundary error: `if("POP_TOTAL" <= 5000, 'Low', if("POP_TOTAL" <= 10000, 'Medium', 'High'))`. Provide a corrected expression that also handles null.
+> In QGIS 3.34, my editable working copy of `ACT01_barangay_profile_RAW.csv` uses field `population_2024`. The Field Calculator expression runs but 5,000 is classified as Low. Review this expression and explain the exact boundary error: `if("population_2024" <= 5000, 'Low', if("population_2024" <= 10000, 'Medium', 'High'))`. Provide a corrected expression that also handles null and writes a text result for `population_band_synth`. Keep the raw CSV unchanged.
 
 ## ACT03: Analysis plan
 
