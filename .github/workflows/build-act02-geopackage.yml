@@ -1,0 +1,52 @@
+name: Build ACT02 GeoPackage
+
+on:
+  push:
+    branches:
+      - act02-geopackage-ci
+    paths:
+      - scripts/build_act02_geopackage.py
+      - .github/workflows/build-act02-geopackage.yml
+      - data/raw/ACT01_barangay_profile_RAW.csv
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: act02-geopackage-ci
+
+      - name: Build GeoPackage
+        run: python scripts/build_act02_geopackage.py
+
+      - name: Verify generated file
+        run: |
+          test -f data/processed/ACT02_QGIS_Assistant.gpkg
+          python - <<'PY'
+          import sqlite3
+          path = 'data/processed/ACT02_QGIS_Assistant.gpkg'
+          con = sqlite3.connect(path)
+          assert con.execute('PRAGMA integrity_check').fetchone()[0] == 'ok'
+          assert con.execute('SELECT COUNT(*) FROM act02_barangay_profile').fetchone()[0] == 72
+          assert con.execute("SELECT population_2024 FROM act02_barangay_profile WHERE barangay_name='Adya'").fetchone()[0] == 2144
+          assert con.execute("SELECT population_2024 FROM act02_barangay_profile WHERE barangay_name='Anilao'").fetchone()[0] == 5019
+          assert con.execute("SELECT population_2024 FROM act02_barangay_profile WHERE barangay_name='Latag'").fetchone()[0] == 9230
+          assert con.execute("SELECT population_2024 FROM act02_barangay_profile WHERE barangay_name='Balintawak'").fetchone()[0] == 19063
+          con.close()
+          PY
+
+      - name: Commit generated GeoPackage
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/processed/ACT02_QGIS_Assistant.gpkg
+          git diff --cached --quiet && exit 0
+          git commit -m "Add ACT02 QGIS Assistant GeoPackage"
+          git push origin HEAD:act02-geopackage-ci
