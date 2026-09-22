@@ -34,6 +34,9 @@ jobs:
           path = 'data/processed/ACT02_QGIS_Assistant.gpkg'
           con = sqlite3.connect(path)
           assert con.execute('PRAGMA integrity_check').fetchone()[0] == 'ok'
+          assert con.execute('PRAGMA application_id').fetchone()[0] == 1196444487
+          assert con.execute('PRAGMA user_version').fetchone()[0] == 10200
+          assert con.execute("SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='gpkg_geometry_columns'").fetchone()[0] == 1
           assert con.execute('SELECT COUNT(*) FROM act02_barangay_profile').fetchone()[0] == 72
           assert con.execute("SELECT population_2024 FROM act02_barangay_profile WHERE barangay_name='Adya'").fetchone()[0] == 2144
           assert con.execute("SELECT population_2024 FROM act02_barangay_profile WHERE barangay_name='Anilao'").fetchone()[0] == 5019

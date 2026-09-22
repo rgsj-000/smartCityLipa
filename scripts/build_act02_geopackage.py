@@ -85,6 +85,21 @@ def create_core_tables(conn: sqlite3.Connection) -> None:
             CONSTRAINT fk_gc_r_srs_id FOREIGN KEY (srs_id)
                 REFERENCES gpkg_spatial_ref_sys(srs_id)
         );
+
+        CREATE TABLE gpkg_geometry_columns (
+            table_name TEXT NOT NULL,
+            column_name TEXT NOT NULL,
+            geometry_type_name TEXT NOT NULL,
+            srs_id INTEGER NOT NULL,
+            z TINYINT NOT NULL,
+            m TINYINT NOT NULL,
+            CONSTRAINT pk_geom_cols PRIMARY KEY (table_name, column_name),
+            CONSTRAINT uk_gc_table_name UNIQUE (table_name),
+            CONSTRAINT fk_gc_tn FOREIGN KEY (table_name)
+                REFERENCES gpkg_contents(table_name),
+            CONSTRAINT fk_gc_srs FOREIGN KEY (srs_id)
+                REFERENCES gpkg_spatial_ref_sys(srs_id)
+        );
         """
     )
 
@@ -213,6 +228,16 @@ def build() -> None:
         result = conn.execute("PRAGMA integrity_check").fetchone()[0]
         if result != "ok":
             raise RuntimeError(f"GeoPackage integrity check failed: {result}")
+
+        geometry_columns_exists = conn.execute(
+            """
+            SELECT COUNT(*)
+            FROM sqlite_master
+            WHERE type = 'table' AND name = 'gpkg_geometry_columns'
+            """
+        ).fetchone()[0]
+        if geometry_columns_exists != 1:
+            raise RuntimeError("GeoPackage is missing gpkg_geometry_columns")
 
         count = conn.execute(
             "SELECT COUNT(*) FROM act02_barangay_profile"
