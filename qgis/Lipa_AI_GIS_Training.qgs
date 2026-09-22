@@ -1,0 +1,51 @@
+<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<qgis projectname="Lipa AI GIS Training - ACT03" version="3.34">
+  <title>Lipa City AI + GIS Training - ACT03 Analysis Assistant</title>
+  <homePath path="."/>
+  <projectCrs><spatialrefsys>
+          <srsid>0</srsid><srid>32651</srid><authid>EPSG:32651</authid>
+          <description>WGS 84 / UTM zone 51N</description><projectionacronym>utm</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym><geographicflag>false</geographicflag>
+        </spatialrefsys></projectCrs>
+  <layer-tree-group checked="Qt::Checked" expanded="1" name="">
+    <layer-tree-layer checked="Qt::Checked" expanded="1" id="lipa_barangays_psa_reference" name="Lipa Barangays (PSA Reference)" providerKey="ogr" source="/vsicurl/https://ulap-nga.georisk.gov.ph/arcgis/rest/services/PSA/Barangay_2020/MapServer/0/query?where=psgc_10d%20LIKE%20%270401014%25%27&amp;outFields=brgy_name%2Cpsgc_10d%2Curban_rural2015%2Cbgyarea_sqkm%2Cpop%2Cpop_yr%2Ccity_name%2Cprov_name&amp;returnGeometry=true&amp;outSR=32651&amp;f=geojson"/>
+    <layer-tree-layer checked="Qt::Checked" expanded="1" id="act03_facilities_synthetic" name="Facilities (Synthetic)" providerKey="ogr" source="/vsicurl/https://raw.githubusercontent.com/rgsj-000/smartCityLipa/489e4cae7f75082d4c56964ac91350ba078ec62e/data/act03/ACT03_facilities_SYNTHETIC.geojson"/>
+    <layer-tree-layer checked="Qt::Checked" expanded="1" id="act03_roads_synthetic" name="Roads (Synthetic)" providerKey="ogr" source="/vsicurl/https://raw.githubusercontent.com/rgsj-000/smartCityLipa/489e4cae7f75082d4c56964ac91350ba078ec62e/data/act03/ACT03_roads_SYNTHETIC.geojson"/>
+    <layer-tree-layer checked="Qt::Checked" expanded="1" id="act03_flood_hazard_synthetic" name="Flood Hazard (Synthetic)" providerKey="ogr" source="/vsicurl/https://raw.githubusercontent.com/rgsj-000/smartCityLipa/489e4cae7f75082d4c56964ac91350ba078ec62e/data/act03/ACT03_flood_hazard_SYNTHETIC.geojson"/>
+  </layer-tree-group>
+  <projectlayers>
+    <maplayer type="vector" geometry="Polygon" readOnly="1" labelsEnabled="0" hasScaleBasedVisibilityFlag="0">
+      <id>lipa_barangays_psa_reference</id><datasource>/vsicurl/https://ulap-nga.georisk.gov.ph/arcgis/rest/services/PSA/Barangay_2020/MapServer/0/query?where=psgc_10d%20LIKE%20%270401014%25%27&amp;outFields=brgy_name%2Cpsgc_10d%2Curban_rural2015%2Cbgyarea_sqkm%2Cpop%2Cpop_yr%2Ccity_name%2Cprov_name&amp;returnGeometry=true&amp;outSR=32651&amp;f=geojson</datasource><layername>Lipa Barangays (PSA Reference)</layername>
+      <srs><spatialrefsys>
+          <srsid>0</srsid><srid>32651</srid><authid>EPSG:32651</authid>
+          <description>WGS 84 / UTM zone 51N</description><projectionacronym>utm</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym><geographicflag>false</geographicflag>
+        </spatialrefsys></srs><provider encoding="UTF-8">ogr</provider>
+    </maplayer>
+    <maplayer type="vector" geometry="Point" readOnly="1" labelsEnabled="0" hasScaleBasedVisibilityFlag="0">
+      <id>act03_facilities_synthetic</id><datasource>/vsicurl/https://raw.githubusercontent.com/rgsj-000/smartCityLipa/489e4cae7f75082d4c56964ac91350ba078ec62e/data/act03/ACT03_facilities_SYNTHETIC.geojson</datasource><layername>Facilities (Synthetic)</layername>
+      <srs><spatialrefsys>
+          <srsid>3452</srsid><srid>4326</srid><authid>EPSG:4326</authid>
+          <description>WGS 84</description><projectionacronym>longlat</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym><geographicflag>true</geographicflag>
+        </spatialrefsys></srs><provider encoding="UTF-8">ogr</provider>
+    </maplayer>
+    <maplayer type="vector" geometry="Line" readOnly="1" labelsEnabled="0" hasScaleBasedVisibilityFlag="0">
+      <id>act03_roads_synthetic</id><datasource>/vsicurl/https://raw.githubusercontent.com/rgsj-000/smartCityLipa/489e4cae7f75082d4c56964ac91350ba078ec62e/data/act03/ACT03_roads_SYNTHETIC.geojson</datasource><layername>Roads (Synthetic)</layername>
+      <srs><spatialrefsys>
+          <srsid>3452</srsid><srid>4326</srid><authid>EPSG:4326</authid>
+          <description>WGS 84</description><projectionacronym>longlat</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym><geographicflag>true</geographicflag>
+        </spatialrefsys></srs><provider encoding="UTF-8">ogr</provider>
+    </maplayer>
+    <maplayer type="vector" geometry="Polygon" readOnly="1" labelsEnabled="0" hasScaleBasedVisibilityFlag="0">
+      <id>act03_flood_hazard_synthetic</id><datasource>/vsicurl/https://raw.githubusercontent.com/rgsj-000/smartCityLipa/489e4cae7f75082d4c56964ac91350ba078ec62e/data/act03/ACT03_flood_hazard_SYNTHETIC.geojson</datasource><layername>Flood Hazard (Synthetic)</layername>
+      <srs><spatialrefsys>
+          <srsid>3452</srsid><srid>4326</srid><authid>EPSG:4326</authid>
+          <description>WGS 84</description><projectionacronym>longlat</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym><geographicflag>true</geographicflag>
+        </spatialrefsys></srs><provider encoding="UTF-8">ogr</provider>
+    </maplayer>
+  </projectlayers>
+  <properties><Paths><Absolute type="bool">false</Absolute></Paths></properties>
+</qgis>
