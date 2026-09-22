@@ -166,7 +166,23 @@ def build(source_url: str, repo_root: Path) -> None:
         shp_dir = tmp / "ACT03_lipa_barangays_REFERENCE_UTM51N"
         shp_dir.mkdir()
         shp_path = shp_dir / "ACT03_lipa_barangays_REFERENCE_UTM51N.shp"
-        lipa_utm.to_file(shp_path, driver="ESRI Shapefile")
+        # Shapefile limits field names to 10 characters. Export explicit short
+        # aliases instead of accepting silent/truncated field names.
+        shp_export = lipa_utm[[
+            "psgc_10_digit",
+            "barangay_name",
+            "urban_rural",
+            "population_2024",
+            "geometry",
+        ]].rename(
+            columns={
+                "psgc_10_digit": "PSGC_CODE",
+                "barangay_name": "BRGY_NAME",
+                "urban_rural": "URB_RURAL",
+                "population_2024": "POP_2024",
+            }
+        )
+        shp_export.to_file(shp_path, driver="ESRI Shapefile")
         zip_base = generated / "ACT03_lipa_barangays_REFERENCE_UTM51N_shapefile"
         zip_path = Path(str(zip_base) + ".zip")
         if zip_path.exists():
