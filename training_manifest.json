@@ -1,6 +1,6 @@
 {
   "project": "Lipa City AI + GIS Training Package",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "training_data_status": "mixed_reference_and_synthetic_training_data",
   "accountability_statement": "AI assists. QGIS verifies. People decide.",
   "official_program": "GIS Application for Smart Cities Training in Lipa City",
@@ -55,7 +55,20 @@
       "required_output": "GIS analysis plan",
       "worksheet": "ACT03_Analysis_Assistant_Worksheet.docx",
       "answer_key": "ACT03_Answer_Key.md",
-      "offline_sample": "ACT03_Offline_AI_Response.md"
+      "offline_sample": "ACT03_Offline_AI_Response.md",
+      "working_crs": "EPSG:32651",
+      "boundary_status": "REFERENCE_NAMRIA_DERIVED_NOT_LGU_CERTIFIED",
+      "datasets": [
+        "data/act03/ACT03_lipa_barangays_PSA_2024.csv",
+        "data/act03/ACT03_facilities_SYNTHETIC.csv",
+        "data/act03/ACT03_facilities_SYNTHETIC.geojson",
+        "data/act03/ACT03_roads_SYNTHETIC.geojson",
+        "data/act03/ACT03_flood_hazard_SYNTHETIC.geojson",
+        "data/act03/ACT03_DATASET_MANIFEST.csv",
+        "data/act03/generated/ACT03_Lipa_Training_UTM51N.gpkg"
+      ],
+      "dataset_documentation": "docs/ACT03_DATASETS.md",
+      "dataset_builder": "scripts/build_act03_lipa_boundary.py"
     },
     {
       "id": "ACT04",
@@ -94,6 +107,16 @@
     "fields": ["psgc_10_digit", "correspondence_code", "barangay_name", "urban_rural", "population_2024"],
     "note": "All *_synth fields and all ACT01 facility/service-request records are synthetic training data."
   },
+  "act03_reference_fields": {
+    "source": "Philippine Statistics Authority PSGC City of Lipa listing / 2024 POPCEN",
+    "url": "https://psa.gov.ph/classification/psgc/barangays/0401014000",
+    "expected_barangays": 72,
+    "expected_population_2024": 387392,
+    "fields": ["psgc_10_digit", "correspondence_code", "barangay_name", "urban_rural", "population_2024"],
+    "geometry_source": "bendlikeabamboo/barangay-boundaries-repository v2026.4.13.0, NAMRIA-derived and PSGC-enriched",
+    "geometry_status": "REFERENCE_NAMRIA_DERIVED; not an LGU-certified legal/cadastral boundary",
+    "synthetic_layers": ["facilities_synthetic", "roads_synthetic", "flood_hazard_synthetic"]
+  },
   "canonical_files": {
     "qgis_project": "qgis/Lipa_AI_GIS_Training.qgz",
     "geopackage": "data/processed/lipa_training.gpkg",
@@ -102,6 +125,9 @@
     "act01_data_dictionary": "data/reference/ACT01_data_dictionary.csv",
     "act01_dataset_guide": "docs/ACT01_DATASETS.md",
     "act01_facilitator_workbook": "facilitator/ACT01_Data_Dictionary_and_Facilitator_Key.xlsx",
+    "act03_dataset_guide": "docs/ACT03_DATASETS.md",
+    "act03_dataset_builder": "scripts/build_act03_lipa_boundary.py",
+    "act03_combined_geopackage": "data/act03/generated/ACT03_Lipa_Training_UTM51N.gpkg",
     "expressions": "workflows/qgis_expressions.md",
     "prompt_library": "prompts/ai_gis_prompt_library.md"
   }
