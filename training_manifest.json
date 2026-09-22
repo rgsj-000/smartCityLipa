@@ -37,7 +37,13 @@
       "required_output": "Working verified expression or workflow",
       "worksheet": "ACT02_QGIS_Assistant_Worksheet.docx",
       "answer_key": "ACT02_Answer_Key.md",
-      "offline_sample": "ACT02_Offline_AI_Response.md"
+      "offline_sample": "ACT02_Offline_AI_Response.md",
+      "datasets": [
+        "data/raw/ACT01_barangay_profile_RAW.csv"
+      ],
+      "source_field": "population_2024",
+      "output_field": "population_band_synth",
+      "classification_note": "Low, Medium, and High are training-only exercise bands and are not an official LGU classification."
     },
     {
       "id": "ACT03",
