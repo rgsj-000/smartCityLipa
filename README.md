@@ -31,9 +31,26 @@ Recommended setup:
 
 ## Training data
 
-All supplied data are synthetic. The six training barangays, facilities, roads, hazard polygons, values, and outputs do not represent official Lipa City records. Do not use them for operational decisions.
+The repository now contains two complementary training-data tracks.
 
-The project uses EPSG:32651, WGS 84 / UTM zone 51N. The layers are stored in `data/processed/lipa_training.gpkg`:
+### ACT01 comprehensive exploration datasets
+
+ACT01 uses a broader LGU-style dataset package so participants can explore field meaning, data types, missingness, controlled vocabularies, suspicious values, joins, point coordinates, service records, and possible Smart City indicators before advanced analysis.
+
+| File | Records | Purpose |
+|---|---:|---|
+| `data/raw/ACT01_barangay_profile_RAW.csv` | 72 | Main participant barangay profile with controlled QA issues |
+| `data/reference/ACT01_barangay_profile_REFERENCE_CLEAN.csv` | 72 | Facilitator/reference clean version |
+| `data/raw/ACT01_facilities_SYNTHETIC.csv` | 192 | Synthetic facilities and WGS84 training coordinates |
+| `data/raw/ACT01_service_requests_SYNTHETIC.csv` | 600 | Synthetic LGU-style service-request records |
+| `data/reference/ACT01_data_dictionary.csv` | 56 field definitions | Field metadata and source-status reference |
+| `facilitator/ACT01_facilitator_issue_key.csv` | 13 issues | Facilitator QA key for the RAW profile |
+
+Barangay names, PSGC codes, urban/rural classification, and `population_2024` are based on the Philippine Statistics Authority PSGC City of Lipa listing and 2024 POPCEN values. Fields ending in `_synth`, all ACT01 facility records and coordinates, and all ACT01 service-request records are synthetic training data. See `docs/ACT01_DATASETS.md` and `TRAINING_DATA_NOTICE.md` before using the files.
+
+### Reusable QGIS project
+
+The QGIS project remains a fully synthetic six-barangay training environment. The project uses EPSG:32651, WGS 84 / UTM zone 51N. Its layers are stored in `data/processed/lipa_training.gpkg`:
 
 | Layer | Features | Purpose |
 |---|---:|---|
@@ -42,22 +59,25 @@ The project uses EPSG:32651, WGS 84 / UTM zone 51N. The layers are stored in `da
 | roads | 5 | Accessibility discussion |
 | flood_hazard | 2 | Moderate and high synthetic hazard areas |
 
+Synthetic values and geometries must not be used for operational decisions.
+
 ## Start the workshop
 
 1. Download or clone the repository.
 2. Keep the folder structure unchanged.
-3. Open `qgis/Lipa_AI_GIS_Training.qgz`.
-4. Confirm that four layers appear and the project CRS is EPSG:32651.
-5. Apply the matching `.qml` file from `qgis/styles` if a layer style does not load.
-6. Open the workflow for the current activity.
+3. For ACT01, begin with `data/raw/ACT01_barangay_profile_RAW.csv` and follow `docs/ACT01_DATASETS.md`.
+4. For the reusable QGIS project, open `qgis/Lipa_AI_GIS_Training.qgz`.
+5. Confirm that four QGIS project layers appear and the project CRS is EPSG:32651.
+6. Apply the matching `.qml` file from `qgis/styles` if a layer style does not load.
+7. Open the workflow for the current activity.
 
 ## Folder structure
 
 ```text
 repository root/
-  data/raw/                 CSV source used in the joining example
-  data/processed/           GeoPackage used by the QGIS project
-  data/reference/           Data dictionary and GeoJSON copy
+  data/raw/                 ACT01 participant CSVs and CSV source used in the joining example
+  data/processed/           GeoPackage used by the reusable QGIS project
+  data/reference/           ACT01 clean/reference data and data dictionaries
   qgis/                     QGIS project and reusable styles
   outputs/screenshots/      Expected map outputs
   outputs/expected_results.json  Machine-readable ACT02 and ACT05 checks
@@ -66,12 +86,13 @@ repository root/
   prompts/                  GIS prompt library
   facilitator/answer_keys/  Teaching keys for all five activities
   facilitator/offline_ai_samples/  Pre-generated responses for offline delivery
-  docs/                     Package documentation
+  facilitator/ACT01_facilitator_issue_key.csv  ACT01 seeded QA issue key
+  docs/                     Package documentation, including ACT01 dataset guide
 ```
 
 ## Activity sequence
 
-ACT01 starts with fields and sample values. Participants use AI to draft possible meanings and data-quality questions, then validate the draft against the supplied dictionary.
+ACT01 starts with unfamiliar fields and realistic sample values. Participants use AI to draft possible meanings and data-quality questions, then validate the draft against the supplied dictionary and actual data. The RAW barangay profile intentionally contains controlled QA issues for discovery.
 
 ACT02 uses AI to explain and improve a QGIS Field Calculator expression. Participants test boundary and null cases before accepting the expression.
 
@@ -97,15 +118,15 @@ Keep the QGIS project and `data` folder in their original relative positions. If
 
 ### Text fields become numbers
 
-Import `BRGY_CODE` as text. A geographic identifier is not a quantity and should not be calculated as a number.
+Import geographic identifiers such as PSGC codes as text. An identifier is not a quantity and should not be calculated as a number.
 
 ### Areas or distances look wrong
 
-Confirm that the project and layer CRS are EPSG:32651 before calculating metric distance or area.
+Confirm that the project and layer CRS are appropriate before calculating metric distance or area. The reusable QGIS project uses EPSG:32651. The synthetic ACT01 facility longitude/latitude fields are supplied in EPSG:4326.
 
 ### AI gives a different expression
 
-Different syntax may be acceptable if it uses existing fields, handles nulls, produces the required categories, and passes test records. The participant must explain the expression.
+Different syntax may be acceptable if it uses existing fields, handles nulls, produces the required categories, and passes test records. The participant must explain and verify the expression.
 
 ## Maintenance
 
@@ -113,4 +134,4 @@ Update `VERSION` and `training_manifest.json` together. When a canonical field o
 
 ## License and attribution
 
-Training materials use CC BY 4.0. The synthetic dataset has no external data source. Cite the training package when adapting the materials and replace synthetic values with approved sources before real use.
+Training materials use CC BY 4.0. ACT01 contains a limited set of PSA reference fields plus synthetic training fields. The reusable QGIS project remains synthetic. Cite the training package when adapting the materials and replace synthetic values with approved sources before real use.
