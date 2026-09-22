@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Regenerate machine-readable checks and the ACT05 evidence map.
 
-The script uses only Python's standard library plus Matplotlib. It reads the
-training GeoPackage directly, so the expected results remain traceable to the
-same synthetic data opened in QGIS.
+ACT02 continues from the mixed reference and synthetic ACT01 barangay profile.
+ACT05 continues to use the synthetic GeoPackage opened in QGIS.
 """
 
 from __future__ import annotations
 
+import csv
 import json
 import sqlite3
 import struct
@@ -19,6 +19,7 @@ from matplotlib.patches import Patch, Polygon
 
 ROOT = Path(__file__).resolve().parents[1]
 GPKG = ROOT / "data" / "processed" / "lipa_training.gpkg"
+ACT01_PROFILE = ROOT / "data" / "raw" / "ACT01_barangay_profile_RAW.csv"
 OUTPUTS = ROOT / "outputs"
 SCREENSHOTS = OUTPUTS / "screenshots"
 
@@ -57,6 +58,29 @@ def intersects(left: tuple[float, float, float, float], right: tuple[float, floa
     )
 
 
+def population_band(value: int | None) -> str:
+    if value is None:
+        return "Unknown"
+    if value < 5000:
+        return "Low"
+    if value <= 10000:
+        return "Medium"
+    return "High"
+
+
+with ACT01_PROFILE.open(newline="", encoding="utf-8-sig") as source:
+    act01_rows = list(csv.DictReader(source))
+
+act01_by_name = {row["barangay_name"]: row for row in act01_rows}
+representative_names = ["Adya", "Anilao", "Latag", "Balintawak"]
+representative_records = {}
+for name in representative_names:
+    population = int(act01_by_name[name]["population_2024"])
+    representative_records[name] = {
+        "population_2024": population,
+        "expected_band": population_band(population),
+    }
+
 with sqlite3.connect(GPKG) as connection:
     barangays = [
         {"code": code, "name": name, "points": polygon_from_gpkg(geom)}
@@ -89,19 +113,26 @@ for barangay in barangays:
     ]
 
 expected = {
-    "training_data_status": "synthetic_training_only",
+    "training_data_status": "mixed_reference_and_synthetic_training_data",
     "accountability_statement": "AI assists. QGIS verifies. People decide.",
     "ACT02": {
+        "dataset": "data/raw/ACT01_barangay_profile_RAW.csv",
+        "source_field": "population_2024",
+        "output_field": "population_band_synth",
+        "classification_note": "Low, Medium, and High are training-only exercise bands.",
         "boundary_tests": {
-            "4999": "Low",
-            "5000": "Medium",
-            "10000": "Medium",
-            "10001": "High",
-            "null": "Unknown",
+            "4999": population_band(4999),
+            "5000": population_band(5000),
+            "10000": population_band(10000),
+            "10001": population_band(10001),
+            "null": population_band(None),
         },
+        "representative_records": representative_records,
         "verification_method": (
             "Use the QGIS expression preview, temporarily substitute each literal "
-            "for POP_TOTAL, read the preview result, and do not save the literal tests."
+            "for population_2024, read the preview result, and do not save the literal tests. "
+            "Run the final expression on an editable working copy of the ACT01 profile and "
+            "keep the raw CSV unchanged."
         ),
     },
     "ACT05": {
