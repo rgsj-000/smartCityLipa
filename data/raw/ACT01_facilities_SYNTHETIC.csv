@@ -1,0 +1,193 @@
+facility_id,facility_name,facility_type,barangay_name,operator_type,capacity_persons_synth,staff_count_synth,operational_status_synth,has_backup_power_synth,has_water_storage_synth,access_road_condition_synth,latitude_wgs84_synth,longitude_wgs84_synth,last_inspected_synth,remarks_synth
+FAC-001,Balintawak Barangay Hall,Barangay Hall,Balintawak,National Government,110,34,Operational,Yes,No,Good,14.010554,121.113161,2026-08-21,
+FAC-002,Halang Barangay Hall,Barangay Hall,Halang,LGU,242,5,Operational,Yes,No,Fair,13.975593,121.125146,2026-07-03,Check accessibility
+FAC-003,Mataas Na Lupa Barangay Hall,Barangay Hall,Mataas Na Lupa,Partner Institution,89,33,Operational,Yes,Yes,Fair,13.901639,121.127972,2026-09-06,Update contact details
+FAC-004,Poblacion Barangay 10 Barangay Hall,Barangay Hall,Poblacion Barangay 10,Partner Institution,294,25,Limited,Yes,Yes,Good,13.995344,121.186733,2026-07-13,Routine monitoring
+FAC-005,Pusil Barangay Hall,Barangay Hall,Pusil,Partner Institution,266,25,Operational,No,No,Good,13.887663,121.226985,2026-07-10,
+FAC-006,San Jose Barangay Hall,Barangay Hall,San Jose,LGU,227,3,Operational,Yes,No,Fair,13.89503,121.122103,2026-07-29,Update contact details
+FAC-007,Tanguay Barangay Hall,Barangay Hall,Tanguay,Partner Institution,176,13,Operational,Yes,Yes,Fair,13.964359,121.11526,2026-07-01,Check accessibility
+FAC-008,Bagong Pook Barangay Hall,Barangay Hall,Bagong Pook,LGU,134,7,Operational,No,No,Good,13.897649,121.233521,2026-09-10,
+FAC-009,Dagatan Barangay Hall,Barangay Hall,Dagatan,LGU,97,19,For Inspection,Yes,No,Poor,14.012138,121.157879,2026-07-25,Check accessibility
+FAC-010,Malitlit Barangay Hall,Barangay Hall,Malitlit,LGU,50,16,Operational,No,Yes,Good,13.921209,121.195954,2026-07-19,Routine monitoring
+FAC-011,Plaridel Barangay Hall,Barangay Hall,Plaridel,Partner Institution,76,4,Operational,No,No,Good,13.941004,121.101066,2026-07-30,Routine monitoring
+FAC-012,Poblacion Barangay 8 Barangay Hall,Barangay Hall,Poblacion Barangay 8,Barangay,113,4,Operational,Yes,No,Poor,13.986963,121.203835,2026-07-23,
+FAC-013,San Francisco Barangay Hall,Barangay Hall,San Francisco,Partner Institution,38,14,Operational,No,Yes,Good,13.984234,121.237145,2026-07-15,
+FAC-014,Tambo Barangay Hall,Barangay Hall,Tambo,National Government,242,2,Operational,No,No,Good,13.938347,121.186586,2026-07-06,Verify signage
+FAC-015,Antipolo Del Norte Barangay Hall,Barangay Hall,Antipolo Del Norte,Partner Institution,141,32,Operational,No,No,Fair,13.94421,121.166283,2026-09-08,Verify signage
+FAC-016,Calamias Barangay Hall,Barangay Hall,Calamias,National Government,54,13,Operational,Yes,No,Fair,13.999839,121.231865,2026-07-14,
+FAC-017,Mabini Barangay Hall,Barangay Hall,Mabini,Partner Institution,258,23,Operational,Yes,Yes,Fair,13.89075,121.084821,2026-08-17,Check accessibility
+FAC-018,Pinagkawitan Barangay Hall,Barangay Hall,Pinagkawitan,Partner Institution,139,18,Operational,Yes,No,Good,14.000842,121.239962,2026-07-29,Check accessibility
+FAC-019,Poblacion Barangay 6 Barangay Hall,Barangay Hall,Poblacion Barangay 6,National Government,65,35,Operational,No,No,Fair,13.888062,121.221175,2026-07-13,Routine monitoring
+FAC-020,San Carlos Barangay Hall,Barangay Hall,San Carlos,Partner Institution,57,20,Operational,Yes,Yes,Good,13.909418,121.139564,2026-07-19,Routine monitoring
+FAC-021,Santo Toribio Barangay Hall,Barangay Hall,Santo Toribio,Partner Institution,136,3,Operational,Yes,No,Poor,13.91453,121.105967,2026-07-22,
+FAC-022,Anilao Barangay Hall,Barangay Hall,Anilao,Barangay,109,32,Operational,Yes,No,Good,13.96911,121.084485,2026-08-16,Verify signage
+FAC-023,Bulacnin Barangay Hall,Barangay Hall,Bulacnin,LGU,47,34,Operational,Yes,No,Fair,13.952002,121.188269,2026-09-14,Verify signage
+FAC-024,Lodlod Barangay Hall,Barangay Hall,Lodlod,LGU,33,12,Operational,No,Yes,Fair,13.979651,121.212202,2026-09-02,Verify signage
+FAC-025,Pagolingin West Barangay Hall,Barangay Hall,Pagolingin West,Partner Institution,229,7,Operational,No,Yes,Poor,13.973162,121.131085,2026-09-06,Update contact details
+FAC-026,Poblacion Barangay 4 Barangay Hall,Barangay Hall,Poblacion Barangay 4,Barangay,193,18,Operational,Yes,Yes,Good,13.904428,121.212686,2026-08-27,
+FAC-027,Sampaguita Barangay Hall,Barangay Hall,Sampaguita,LGU,253,10,Operational,Yes,Yes,Fair,14.013835,121.178132,2026-07-15,Check accessibility
+FAC-028,Sico Barangay Hall,Barangay Hall,Sico,LGU,101,16,Operational,Yes,No,Fair,13.932368,121.231675,2026-07-28,Update contact details
+FAC-029,Barangay 12 Barangay Hall,Barangay Hall,Barangay 12,Partner Institution,243,30,Operational,Yes,Yes,Good,13.898189,121.127516,2026-07-26,Update contact details
+FAC-030,Bolbok Barangay Hall,Barangay Hall,Bolbok,Partner Institution,97,7,For Inspection,Yes,Yes,Good,14.004292,121.227505,2026-07-12,Verify signage
+FAC-031,Kayumanggi Barangay Hall,Barangay Hall,Kayumanggi,LGU,244,32,Operational,Yes,No,Poor,13.991789,121.191654,2026-07-06,Verify signage
+FAC-032,Pagolingin Bata Barangay Hall,Barangay Hall,Pagolingin Bata,Partner Institution,55,32,Limited,Yes,No,Poor,13.97263,121.107546,2026-08-18,Check accessibility
+FAC-033,Poblacion Barangay 2 Barangay Hall,Barangay Hall,Poblacion Barangay 2,Barangay,148,10,Operational,Yes,Yes,Good,13.909631,121.14293,2026-07-19,Update contact details
+FAC-034,Rizal Barangay Hall,Barangay Hall,Rizal,National Government,153,10,Limited,Yes,Yes,Poor,13.925314,121.202012,2026-07-27,Verify signage
+FAC-035,San Salvador Barangay Hall,Barangay Hall,San Salvador,National Government,74,25,Operational,No,Yes,Fair,13.990071,121.195848,2026-09-06,
+FAC-036,Tipacan Barangay Hall,Barangay Hall,Tipacan,LGU,187,21,Operational,Yes,No,Good,13.933083,121.114885,2026-08-08,Routine monitoring
+FAC-037,Balintawak Barangay Hall,Barangay Hall,Balintawak,Barangay,296,27,Operational,Yes,Yes,Poor,13.926125,121.091835,2026-07-18,Update contact details
+FAC-038,Halang Barangay Hall,Barangay Hall,Halang,LGU,101,29,Operational,Yes,No,Good,13.969091,121.209693,2026-09-04,Update contact details
+FAC-039,Mataas Na Lupa Barangay Hall,Barangay Hall,Mataas Na Lupa,Barangay,162,24,Operational,No,No,Good,13.990484,121.171242,2026-07-27,Routine monitoring
+FAC-040,Poblacion Barangay 10 Barangay Hall,Barangay Hall,Poblacion Barangay 10,Partner Institution,118,4,Operational,No,No,Good,13.94559,121.205699,2026-07-25,Update contact details
+FAC-041,Pusil Barangay Hall,Barangay Hall,Pusil,National Government,147,22,Operational,No,Yes,Good,13.986674,121.093007,2026-07-18,Routine monitoring
+FAC-042,San Jose Barangay Hall,Barangay Hall,San Jose,National Government,267,31,Limited,Yes,Yes,Good,13.999905,121.086223,2026-07-20,Check accessibility
+FAC-043,Tanguay Barangay Hall,Barangay Hall,Tanguay,Partner Institution,181,23,Operational,Yes,Yes,Fair,13.943388,121.082089,2026-09-09,
+FAC-044,Bagong Pook Barangay Hall,Barangay Hall,Bagong Pook,Barangay,153,9,For Inspection,Yes,Yes,Good,13.885665,121.095977,2026-07-19,Verify signage
+FAC-045,Dagatan Barangay Hall,Barangay Hall,Dagatan,Partner Institution,244,34,Operational,Yes,No,Good,13.893262,121.172223,2026-07-02,Verify signage
+FAC-046,Malitlit Barangay Hall,Barangay Hall,Malitlit,LGU,41,19,Operational,Yes,Yes,Good,13.960321,121.113117,2026-08-27,Update contact details
+FAC-047,Plaridel Barangay Hall,Barangay Hall,Plaridel,Partner Institution,107,28,Operational,Yes,Yes,Fair,14.002464,121.161966,2026-08-29,Update contact details
+FAC-048,Poblacion Barangay 8 Barangay Hall,Barangay Hall,Poblacion Barangay 8,National Government,50,3,For Inspection,No,Yes,Good,13.968935,121.126518,2026-08-12,Routine monitoring
+FAC-049,San Francisco Barangay Hall,Barangay Hall,San Francisco,National Government,189,26,Operational,Yes,No,Poor,13.998639,121.112687,2026-08-20,Check accessibility
+FAC-050,Tambo Barangay Hall,Barangay Hall,Tambo,LGU,140,19,For Inspection,Yes,Yes,Good,14.007341,121.158317,2026-07-17,Verify signage
+FAC-051,Antipolo Del Norte Barangay Hall,Barangay Hall,Antipolo Del Norte,Barangay,163,25,Operational,No,Yes,Poor,13.996378,121.210902,2026-08-15,Verify signage
+FAC-052,Calamias Barangay Hall,Barangay Hall,Calamias,National Government,253,4,Operational,No,No,Good,13.968895,121.20008,2026-07-31,Routine monitoring
+FAC-053,Mabini Barangay Hall,Barangay Hall,Mabini,Barangay,158,11,Limited,Yes,Yes,Good,13.929643,121.153664,2026-08-06,Verify signage
+FAC-054,Pinagkawitan Barangay Hall,Barangay Hall,Pinagkawitan,Partner Institution,105,26,Operational,No,No,Good,13.904405,121.208004,2026-08-10,Check accessibility
+FAC-055,Poblacion Barangay 6 Barangay Hall,Barangay Hall,Poblacion Barangay 6,LGU,214,16,Operational,Yes,No,Fair,14.014497,121.161499,2026-08-27,Verify signage
+FAC-056,San Carlos Barangay Hall,Barangay Hall,San Carlos,Barangay,281,35,Operational,Yes,Yes,Good,13.925384,121.161682,2026-07-23,
+FAC-057,Santo Toribio Barangay Hall,Barangay Hall,Santo Toribio,LGU,177,25,Operational,Yes,Yes,Fair,13.896168,121.113769,2026-08-22,Update contact details
+FAC-058,Anilao Barangay Hall,Barangay Hall,Anilao,LGU,112,32,Operational,Yes,No,Good,13.929738,121.080094,2026-07-02,Routine monitoring
+FAC-059,Bulacnin Barangay Hall,Barangay Hall,Bulacnin,Barangay,246,4,Operational,Yes,Yes,Poor,13.955647,121.166598,2026-08-16,Verify signage
+FAC-060,Lodlod Barangay Hall,Barangay Hall,Lodlod,National Government,191,7,Limited,Yes,No,Good,13.880715,121.218604,2026-07-12,
+FAC-061,Pagolingin West Barangay Hall,Barangay Hall,Pagolingin West,Barangay,210,22,Limited,Yes,No,Good,13.987282,121.146683,2026-07-25,
+FAC-062,Poblacion Barangay 4 Barangay Hall,Barangay Hall,Poblacion Barangay 4,Partner Institution,115,15,Operational,No,Yes,Good,14.018839,121.186904,2026-07-25,Routine monitoring
+FAC-063,Sampaguita Barangay Hall,Barangay Hall,Sampaguita,National Government,144,30,Operational,Yes,Yes,Fair,13.922023,121.202705,2026-07-14,Check accessibility
+FAC-064,Sico Barangay Hall,Barangay Hall,Sico,Barangay,212,18,Operational,No,No,Poor,13.983232,121.22984,2026-08-20,Update contact details
+FAC-065,Barangay 12 Barangay Hall,Barangay Hall,Barangay 12,National Government,30,29,Operational,Yes,No,Good,13.890189,121.197745,2026-07-09,Routine monitoring
+FAC-066,Bolbok Barangay Hall,Barangay Hall,Bolbok,Barangay,238,18,Operational,No,No,Fair,13.940485,121.19556,2026-08-24,Routine monitoring
+FAC-067,Kayumanggi Barangay Hall,Barangay Hall,Kayumanggi,LGU,299,17,For Inspection,Yes,Yes,Fair,13.9881,121.180949,2026-08-12,Routine monitoring
+FAC-068,Pagolingin Bata Barangay Hall,Barangay Hall,Pagolingin Bata,Barangay,83,18,Operational,Yes,No,Poor,13.888402,121.181401,2026-08-12,Update contact details
+FAC-069,Poblacion Barangay 2 Barangay Hall,Barangay Hall,Poblacion Barangay 2,LGU,44,26,Operational,No,No,Fair,14.007564,121.097813,2026-09-14,Update contact details
+FAC-070,Rizal Barangay Hall,Barangay Hall,Rizal,LGU,226,23,Operational,Yes,Yes,Good,13.950184,121.126733,2026-08-09,Verify signage
+FAC-071,San Salvador Barangay Hall,Barangay Hall,San Salvador,Barangay,261,6,Operational,Yes,Yes,Poor,14.018391,121.141978,2026-09-01,Check accessibility
+FAC-072,Tipacan Barangay Hall,Barangay Hall,Tipacan,Partner Institution,292,26,Operational,Yes,No,Good,13.972147,121.199065,2026-07-02,
+FAC-073,Balintawak Public School 1,Public School,Balintawak,Barangay,1498,16,Operational,Yes,No,Good,14.002346,121.10508,2026-08-12,Check accessibility
+FAC-074,Halang Public School 2,Public School,Halang,Partner Institution,1234,2,Operational,No,No,Poor,13.93038,121.138563,2026-07-17,Check accessibility
+FAC-075,Mataas Na Lupa Public School 3,Public School,Mataas Na Lupa,National Government,420,20,Operational,Yes,Yes,Good,14.002236,121.093115,2026-08-06,Verify signage
+FAC-076,Poblacion Barangay 10 Public School 4,Public School,Poblacion Barangay 10,Partner Institution,468,13,Operational,Yes,No,Good,14.009961,121.111834,2026-08-31,
+FAC-077,Pusil Public School 5,Public School,Pusil,National Government,399,28,Operational,Yes,Yes,Good,14.016821,121.210246,2026-09-10,
+FAC-078,San Jose Public School 6,Public School,San Jose,Partner Institution,501,35,Limited,Yes,No,Good,13.972444,121.188525,2026-08-13,Update contact details
+FAC-079,Tanguay Public School 7,Public School,Tanguay,National Government,1383,8,Operational,No,No,Good,13.980718,121.110014,2026-09-09,Routine monitoring
+FAC-080,Bagong Pook Public School 8,Public School,Bagong Pook,LGU,312,30,Operational,Yes,Yes,Good,14.004489,121.162506,2026-07-18,Routine monitoring
+FAC-081,Dagatan Public School 9,Public School,Dagatan,Partner Institution,1261,15,Operational,Yes,No,Good,13.966014,121.189724,2026-07-18,Check accessibility
+FAC-082,Malitlit Public School 10,Public School,Malitlit,LGU,816,7,Operational,No,No,Good,13.963568,121.090581,2026-07-29,Update contact details
+FAC-083,Plaridel Public School 11,Public School,Plaridel,Barangay,391,22,Operational,No,Yes,Good,13.915895,121.216489,2026-08-30,Verify signage
+FAC-084,Poblacion Barangay 8 Public School 12,Public School,Poblacion Barangay 8,LGU,761,24,Operational,Yes,Yes,Good,13.912572,121.14169,2026-09-14,Update contact details
+FAC-085,San Francisco Public School 13,Public School,San Francisco,Barangay,509,35,Operational,Yes,No,Fair,13.958875,121.213016,2026-07-27,Routine monitoring
+FAC-086,Tambo Public School 14,Public School,Tambo,Barangay,286,15,For Inspection,Yes,Yes,Good,14.001045,121.122413,2026-08-30,Routine monitoring
+FAC-087,Antipolo Del Norte Public School 15,Public School,Antipolo Del Norte,Partner Institution,919,24,Operational,Yes,Yes,Poor,13.966786,121.198792,2026-07-03,Update contact details
+FAC-088,Calamias Public School 16,Public School,Calamias,National Government,858,12,Operational,Yes,No,Fair,13.890352,121.123682,2026-07-09,Check accessibility
+FAC-089,Mabini Public School 17,Public School,Mabini,LGU,740,34,For Inspection,No,Yes,Poor,13.889043,121.10556,2026-08-15,Routine monitoring
+FAC-090,Pinagkawitan Public School 18,Public School,Pinagkawitan,LGU,1457,28,Operational,No,No,Good,13.926597,121.157887,2026-07-23,Verify signage
+FAC-091,Poblacion Barangay 6 Public School 19,Public School,Poblacion Barangay 6,National Government,1117,11,Operational,Yes,Yes,Good,13.893133,121.142402,2026-08-01,Check accessibility
+FAC-092,San Carlos Public School 20,Public School,San Carlos,National Government,885,32,Operational,No,No,Good,13.966252,121.210181,2026-08-28,Routine monitoring
+FAC-093,Santo Toribio Public School 21,Public School,Santo Toribio,Barangay,819,34,Operational,Yes,No,Good,13.914719,121.138129,2026-08-09,
+FAC-094,Anilao Public School 22,Public School,Anilao,Partner Institution,968,16,Operational,Yes,No,Fair,13.924328,121.122006,2026-07-11,Check accessibility
+FAC-095,Bulacnin Public School 23,Public School,Bulacnin,Partner Institution,352,34,Limited,Yes,Yes,Good,13.907397,121.215372,2026-08-26,
+FAC-096,Lodlod Public School 24,Public School,Lodlod,LGU,1173,18,Operational,No,No,Good,14.011477,121.222591,2026-09-04,Verify signage
+FAC-097,Pagolingin West Public School 25,Public School,Pagolingin West,LGU,498,23,Operational,No,Yes,Good,13.949855,121.154554,2026-09-12,Routine monitoring
+FAC-098,Poblacion Barangay 4 Public School 26,Public School,Poblacion Barangay 4,Barangay,493,32,For Inspection,No,No,Good,13.953186,121.098672,2026-07-09,Update contact details
+FAC-099,Sampaguita Public School 27,Public School,Sampaguita,Partner Institution,298,29,Operational,No,Yes,Good,14.011794,121.093386,2026-08-31,Verify signage
+FAC-100,Sico Public School 28,Public School,Sico,National Government,1404,3,Operational,Yes,Yes,Good,14.006088,121.104414,2026-07-21,Routine monitoring
+FAC-101,Barangay 12 Public School 29,Public School,Barangay 12,National Government,1288,13,Operational,Yes,No,Fair,13.984284,121.176595,2026-07-04,Check accessibility
+FAC-102,Bolbok Public School 30,Public School,Bolbok,LGU,306,26,Operational,No,Yes,Good,14.004105,121.150879,2026-07-08,Update contact details
+FAC-103,Kayumanggi Public School 31,Public School,Kayumanggi,National Government,561,25,Operational,Yes,No,Poor,13.928401,121.090114,2026-08-17,Routine monitoring
+FAC-104,Pagolingin Bata Public School 32,Public School,Pagolingin Bata,National Government,418,17,Operational,No,Yes,Good,13.930905,121.144942,2026-08-28,Check accessibility
+FAC-105,Poblacion Barangay 2 Public School 33,Public School,Poblacion Barangay 2,National Government,932,18,Operational,No,No,Fair,14.00051,121.217818,2026-07-08,Update contact details
+FAC-106,Rizal Public School 34,Public School,Rizal,Partner Institution,1101,3,Operational,Yes,Yes,Fair,13.894006,121.140682,2026-08-28,
+FAC-107,San Salvador Public School 35,Public School,San Salvador,Barangay,740,32,Operational,Yes,No,Poor,13.903777,121.082795,2026-07-23,Check accessibility
+FAC-108,Tipacan Public School 36,Public School,Tipacan,National Government,419,23,Operational,Yes,No,Poor,13.911963,121.102326,2026-09-08,
+FAC-109,Balintawak Public School 37,Public School,Balintawak,Barangay,1397,29,For Inspection,Yes,Yes,Good,13.989729,121.140236,2026-07-05,Verify signage
+FAC-110,Halang Public School 38,Public School,Halang,Barangay,331,6,Operational,Yes,No,Fair,13.953666,121.181499,2026-08-24,Update contact details
+FAC-111,Mataas Na Lupa Public School 39,Public School,Mataas Na Lupa,Partner Institution,734,31,Operational,No,No,Poor,14.017086,121.126095,2026-07-30,Check accessibility
+FAC-112,Poblacion Barangay 10 Public School 40,Public School,Poblacion Barangay 10,LGU,1471,12,Operational,Yes,No,Fair,13.898864,121.203348,2026-07-05,
+FAC-113,Barangay 12 Health Facility 1,Health Facility,Barangay 12,National Government,178,35,Operational,Yes,Yes,Good,13.911134,121.115736,2026-08-06,Routine monitoring
+FAC-114,Bolbok Health Facility 2,Health Facility,Bolbok,National Government,152,23,Operational,Yes,No,Poor,13.992966,121.115348,2026-08-11,Check accessibility
+FAC-115,Kayumanggi Health Facility 3,Health Facility,Kayumanggi,Barangay,41,28,Operational,No,No,Fair,13.991152,121.203772,2026-08-20,Check accessibility
+FAC-116,Pagolingin Bata Health Facility 4,Health Facility,Pagolingin Bata,Partner Institution,267,8,Limited,Yes,Yes,Good,13.984696,121.167842,2026-07-25,Check accessibility
+FAC-117,Poblacion Barangay 2 Health Facility 5,Health Facility,Poblacion Barangay 2,Partner Institution,158,16,Operational,Yes,Yes,Good,14.017643,121.12035,2026-09-03,Check accessibility
+FAC-118,Rizal Health Facility 6,Health Facility,Rizal,Partner Institution,239,31,Limited,Yes,No,Good,13.958731,121.194832,2026-08-11,Verify signage
+FAC-119,San Salvador Health Facility 7,Health Facility,San Salvador,Barangay,228,15,Operational,Yes,No,Poor,13.974971,121.178718,2026-08-06,Update contact details
+FAC-120,Tipacan Health Facility 8,Health Facility,Tipacan,Partner Institution,171,24,Operational,Yes,Yes,Good,13.941193,121.103098,2026-08-25,Check accessibility
+FAC-121,Balintawak Health Facility 9,Health Facility,Balintawak,National Government,104,23,Limited,Yes,No,Fair,13.93798,121.139315,2026-09-14,Update contact details
+FAC-122,Halang Health Facility 10,Health Facility,Halang,National Government,127,22,Operational,Yes,No,Good,14.0122,121.156529,2026-08-20,Check accessibility
+FAC-123,Mataas Na Lupa Health Facility 11,Health Facility,Mataas Na Lupa,National Government,202,15,Operational,Yes,No,Good,13.90798,121.226559,2026-08-30,Check accessibility
+FAC-124,Poblacion Barangay 10 Health Facility 12,Health Facility,Poblacion Barangay 10,Barangay,160,9,For Inspection,Yes,No,Fair,13.908139,121.106508,2026-07-19,
+FAC-125,Pusil Health Facility 13,Health Facility,Pusil,LGU,102,29,Operational,Yes,Yes,Good,13.912331,121.192113,2026-07-10,
+FAC-126,San Jose Health Facility 14,Health Facility,San Jose,Partner Institution,297,13,Operational,No,Yes,Good,13.909984,121.14863,2026-07-11,Routine monitoring
+FAC-127,Tanguay Health Facility 15,Health Facility,Tanguay,Partner Institution,259,18,Operational,Yes,Yes,Poor,13.911014,121.181898,2026-08-24,Routine monitoring
+FAC-128,Bagong Pook Health Facility 16,Health Facility,Bagong Pook,Barangay,177,32,Operational,Yes,No,Fair,13.981687,121.111936,2026-08-25,Check accessibility
+FAC-129,Dagatan Health Facility 17,Health Facility,Dagatan,LGU,151,10,Operational,No,Yes,Fair,13.962665,121.141484,2026-07-07,
+FAC-130,Malitlit Health Facility 18,Health Facility,Malitlit,Barangay,64,4,Operational,No,Yes,Fair,13.972528,121.09863,2026-07-10,Check accessibility
+FAC-131,Plaridel Health Facility 19,Health Facility,Plaridel,Barangay,220,15,Operational,Yes,Yes,Fair,13.958053,121.101408,2026-07-21,Verify signage
+FAC-132,Poblacion Barangay 8 Health Facility 20,Health Facility,Poblacion Barangay 8,Barangay,170,35,Operational,No,No,Poor,14.019847,121.125698,2026-09-01,Routine monitoring
+FAC-133,Tanguay Evacuation Center 1,Evacuation Center,Tanguay,Partner Institution,246,32,Operational,No,Yes,Good,13.918072,121.163019,2026-09-10,Verify signage
+FAC-134,Bagong Pook Evacuation Center 2,Evacuation Center,Bagong Pook,LGU,834,27,Operational,No,No,Fair,13.896906,121.214657,2026-07-02,Check accessibility
+FAC-135,Dagatan Evacuation Center 3,Evacuation Center,Dagatan,Partner Institution,704,16,Operational,Yes,Yes,Poor,13.88173,121.196598,2026-07-22,Check accessibility
+FAC-136,Malitlit Evacuation Center 4,Evacuation Center,Malitlit,Barangay,159,22,Operational,Yes,No,Good,13.987636,121.238955,2026-07-22,Verify signage
+FAC-137,Plaridel Evacuation Center 5,Evacuation Center,Plaridel,Barangay,765,8,Operational,No,No,Fair,14.013678,121.218237,2026-08-03,Routine monitoring
+FAC-138,Poblacion Barangay 8 Evacuation Center 6,Evacuation Center,Poblacion Barangay 8,Partner Institution,516,23,Operational,Yes,No,Good,13.949464,121.237216,2026-08-29,Routine monitoring
+FAC-139,San Francisco Evacuation Center 7,Evacuation Center,San Francisco,LGU,417,15,Operational,Yes,No,Good,13.970017,121.136436,2026-08-01,Check accessibility
+FAC-140,Tambo Evacuation Center 8,Evacuation Center,Tambo,LGU,616,5,Operational,Yes,No,Poor,13.908904,121.194946,2026-07-02,Check accessibility
+FAC-141,Antipolo Del Norte Evacuation Center 9,Evacuation Center,Antipolo Del Norte,Partner Institution,817,33,Operational,Yes,Yes,Fair,13.923899,121.137595,2026-08-28,Update contact details
+FAC-142,Calamias Evacuation Center 10,Evacuation Center,Calamias,LGU,482,5,Operational,No,Yes,Good,14.019342,121.125593,2026-09-14,Check accessibility
+FAC-143,Mabini Evacuation Center 11,Evacuation Center,Mabini,National Government,636,27,Operational,Yes,No,Good,13.937062,121.219663,2026-07-30,Verify signage
+FAC-144,Pinagkawitan Evacuation Center 12,Evacuation Center,Pinagkawitan,Partner Institution,510,15,Operational,Yes,No,Good,13.943085,121.131648,2026-08-31,Update contact details
+FAC-145,Poblacion Barangay 6 Evacuation Center 13,Evacuation Center,Poblacion Barangay 6,Partner Institution,450,3,Operational,Yes,Yes,Good,13.933097,121.101924,2026-08-25,
+FAC-146,San Carlos Evacuation Center 14,Evacuation Center,San Carlos,National Government,404,27,Operational,Yes,No,Fair,13.926843,121.145026,2026-09-02,Verify signage
+FAC-147,Santo Toribio Evacuation Center 15,Evacuation Center,Santo Toribio,National Government,322,27,Operational,Yes,Yes,Poor,13.899751,121.145081,2026-07-07,Verify signage
+FAC-148,Anilao Evacuation Center 16,Evacuation Center,Anilao,LGU,177,12,Operational,No,No,Good,13.892621,121.10895,2026-07-24,Verify signage
+FAC-149,Bulacnin Evacuation Center 17,Evacuation Center,Bulacnin,National Government,329,20,Operational,No,Yes,Good,14.003507,121.20128,2026-07-14,Verify signage
+FAC-150,Lodlod Evacuation Center 18,Evacuation Center,Lodlod,National Government,696,30,Operational,No,Yes,Fair,13.911861,121.231839,2026-09-03,Update contact details
+FAC-151,Pagolingin West Evacuation Center 19,Evacuation Center,Pagolingin West,National Government,680,9,Operational,Yes,Yes,Poor,13.896328,121.10187,2026-07-24,Routine monitoring
+FAC-152,Poblacion Barangay 4 Evacuation Center 20,Evacuation Center,Poblacion Barangay 4,LGU,275,13,Operational,Yes,No,Fair,13.944086,121.154257,2026-08-20,Routine monitoring
+FAC-153,Sampaguita Evacuation Center 21,Evacuation Center,Sampaguita,LGU,301,34,Operational,No,No,Good,13.988057,121.15059,2026-08-28,Update contact details
+FAC-154,Sico Evacuation Center 22,Evacuation Center,Sico,National Government,559,13,Operational,No,Yes,Fair,13.900457,121.115135,2026-09-03,Verify signage
+FAC-155,Barangay 12 Evacuation Center 23,Evacuation Center,Barangay 12,Barangay,268,14,Operational,No,Yes,Good,13.996313,121.159262,2026-08-07,Verify signage
+FAC-156,Bolbok Evacuation Center 24,Evacuation Center,Bolbok,National Government,841,2,Limited,Yes,Yes,Good,13.908412,121.101756,2026-08-21,Routine monitoring
+FAC-157,Kayumanggi Evacuation Center 25,Evacuation Center,Kayumanggi,Barangay,373,2,Operational,Yes,Yes,Good,13.926345,121.161906,2026-07-10,Update contact details
+FAC-158,Pagolingin Bata Evacuation Center 26,Evacuation Center,Pagolingin Bata,Barangay,344,11,Operational,Yes,No,Fair,13.930937,121.129143,2026-08-07,Verify signage
+FAC-159,Poblacion Barangay 2 Evacuation Center 27,Evacuation Center,Poblacion Barangay 2,National Government,494,7,Operational,No,Yes,Poor,13.950614,121.156342,2026-08-23,Routine monitoring
+FAC-160,Rizal Evacuation Center 28,Evacuation Center,Rizal,National Government,273,18,Operational,Yes,No,Fair,14.01226,121.155276,2026-08-13,Verify signage
+FAC-161,Pusil Fire/Rescue Post 1,Fire/Rescue Post,Pusil,Barangay,153,28,Limited,No,Yes,Good,13.995774,121.221113,2026-09-11,Routine monitoring
+FAC-162,San Jose Fire/Rescue Post 2,Fire/Rescue Post,San Jose,LGU,113,14,Operational,Yes,Yes,Fair,13.905668,121.137121,2026-07-22,Update contact details
+FAC-163,Tanguay Fire/Rescue Post 3,Fire/Rescue Post,Tanguay,National Government,300,29,Operational,Yes,Yes,Poor,13.999833,121.117905,2026-07-28,Check accessibility
+FAC-164,Bagong Pook Fire/Rescue Post 4,Fire/Rescue Post,Bagong Pook,National Government,111,32,Operational,Yes,Yes,Poor,13.984236,121.107092,2026-08-19,Verify signage
+FAC-165,Dagatan Fire/Rescue Post 5,Fire/Rescue Post,Dagatan,Partner Institution,142,5,Operational,No,No,Good,13.930403,121.094093,2026-08-21,Check accessibility
+FAC-166,Malitlit Fire/Rescue Post 6,Fire/Rescue Post,Malitlit,Barangay,132,26,Operational,Yes,Yes,Poor,13.953825,121.219806,2026-07-06,
+FAC-167,Plaridel Fire/Rescue Post 7,Fire/Rescue Post,Plaridel,Barangay,256,18,Operational,Yes,No,Good,13.927702,121.117705,2026-08-29,Verify signage
+FAC-168,Poblacion Barangay 8 Fire/Rescue Post 8,Fire/Rescue Post,Poblacion Barangay 8,National Government,57,15,Operational,Yes,No,Fair,13.960288,121.107283,2026-07-02,Check accessibility
+FAC-169,Pagolingin West Police/Peace and Order 1,Police/Peace and Order,Pagolingin West,National Government,123,10,Operational,Yes,No,Fair,13.982769,121.092925,2026-07-20,Check accessibility
+FAC-170,Poblacion Barangay 4 Police/Peace and Order 2,Police/Peace and Order,Poblacion Barangay 4,Partner Institution,129,32,Operational,No,No,Good,14.019482,121.082526,2026-07-14,Verify signage
+FAC-171,Sampaguita Police/Peace and Order 3,Police/Peace and Order,Sampaguita,Barangay,212,31,Operational,Yes,Yes,Poor,13.958258,121.156552,2026-09-05,Routine monitoring
+FAC-172,Sico Police/Peace and Order 4,Police/Peace and Order,Sico,National Government,202,12,For Inspection,Yes,No,Fair,13.923196,121.093427,2026-07-25,Update contact details
+FAC-173,Barangay 12 Police/Peace and Order 5,Police/Peace and Order,Barangay 12,Partner Institution,267,3,Operational,Yes,No,Fair,14.000143,121.117024,2026-08-05,Update contact details
+FAC-174,Bolbok Police/Peace and Order 6,Police/Peace and Order,Bolbok,LGU,168,9,Operational,Yes,Yes,Fair,13.948409,121.171703,2026-07-19,Verify signage
+FAC-175,Kayumanggi Police/Peace and Order 7,Police/Peace and Order,Kayumanggi,LGU,104,16,Operational,No,Yes,Poor,13.918892,121.134353,2026-07-10,Verify signage
+FAC-176,Pagolingin Bata Police/Peace and Order 8,Police/Peace and Order,Pagolingin Bata,LGU,250,14,Operational,Yes,Yes,Good,13.89195,121.209803,2026-07-20,Check accessibility
+FAC-177,Dagatan Public Market/Trading 1,Public Market/Trading,Dagatan,National Government,1267,29,Operational,No,No,Good,13.994558,121.093467,2026-07-21,Routine monitoring
+FAC-178,Malitlit Public Market/Trading 2,Public Market/Trading,Malitlit,Partner Institution,912,7,Operational,Yes,Yes,Fair,13.900813,121.08258,2026-07-20,Check accessibility
+FAC-179,Plaridel Public Market/Trading 3,Public Market/Trading,Plaridel,National Government,1058,19,Operational,Yes,No,Good,13.915645,121.132557,2026-07-04,
+FAC-180,Poblacion Barangay 8 Public Market/Trading 4,Public Market/Trading,Poblacion Barangay 8,National Government,946,21,Operational,No,No,Good,13.909136,121.098726,2026-09-04,Verify signage
+FAC-181,San Francisco Public Market/Trading 5,Public Market/Trading,San Francisco,Barangay,1128,31,Operational,No,Yes,Good,14.018889,121.238266,2026-07-16,Verify signage
+FAC-182,Tambo Public Market/Trading 6,Public Market/Trading,Tambo,National Government,706,12,Operational,No,No,Good,13.902927,121.169535,2026-07-06,Update contact details
+FAC-183,San Jose Material Recovery Facility 1,Material Recovery Facility,San Jose,LGU,116,35,Operational,Yes,Yes,Poor,13.944377,121.084792,2026-07-23,Verify signage
+FAC-184,Tanguay Material Recovery Facility 2,Material Recovery Facility,Tanguay,Partner Institution,248,5,Operational,Yes,Yes,Good,13.984345,121.144245,2026-08-27,Routine monitoring
+FAC-185,Bagong Pook Material Recovery Facility 3,Material Recovery Facility,Bagong Pook,National Government,176,33,Operational,Yes,No,Good,13.912365,121.120485,2026-07-23,Update contact details
+FAC-186,Dagatan Material Recovery Facility 4,Material Recovery Facility,Dagatan,Barangay,284,8,Operational,No,Yes,Fair,13.969833,121.158489,2026-08-05,Routine monitoring
+FAC-187,Malitlit Material Recovery Facility 5,Material Recovery Facility,Malitlit,National Government,251,6,Operational,Yes,No,Fair,13.977843,121.176757,2026-07-01,Verify signage
+FAC-188,Plaridel Material Recovery Facility 6,Material Recovery Facility,Plaridel,Partner Institution,142,26,Operational,Yes,No,Good,13.939861,121.081458,2026-07-18,Routine monitoring
+FAC-189,Poblacion Barangay 8 Material Recovery Facility 7,Material Recovery Facility,Poblacion Barangay 8,Partner Institution,57,16,Operational,No,Yes,Fair,13.9182,121.1303,2026-08-25,Verify signage
+FAC-190,San Francisco Material Recovery Facility 8,Material Recovery Facility,San Francisco,Partner Institution,169,30,Operational,Yes,Yes,Fair,14.01111,121.205177,2026-09-08,Check accessibility
+FAC-191,Tambo Material Recovery Facility 9,Material Recovery Facility,Tambo,Partner Institution,109,30,Operational,Yes,No,Poor,13.884881,121.109003,2026-07-26,Check accessibility
+FAC-192,Antipolo Del Norte Material Recovery Facility 10,Material Recovery Facility,Antipolo Del Norte,National Government,163,15,Operational,Yes,Yes,Good,13.917142,121.161401,2026-07-21,Update contact details
