@@ -1,27 +1,31 @@
 # Reusable QGIS Expressions
 
-These expressions use the canonical training fields. Run them in QGIS, inspect sample records, and explain the result before saving an output.
+These expressions use the canonical training fields for their respective activities. Run them in QGIS, inspect sample records, and explain the result before saving an output.
 
-## Population class with null handling
+## ACT02 population band with null handling
 
-Create a text field named `POP_CLASS`.
+ACT02 continues from `data/raw/ACT01_barangay_profile_RAW.csv`. Work on an editable QGIS copy of the ACT01 profile and keep the raw CSV unchanged.
+
+Create a text field named `population_band_synth`.
 
 ```qgis
 CASE
-  WHEN "POP_TOTAL" IS NULL THEN 'Unknown'
-  WHEN "POP_TOTAL" < 5000 THEN 'Low'
-  WHEN "POP_TOTAL" <= 10000 THEN 'Medium'
+  WHEN "population_2024" IS NULL THEN 'Unknown'
+  WHEN "population_2024" < 5000 THEN 'Low'
+  WHEN "population_2024" <= 10000 THEN 'Medium'
   ELSE 'High'
 END
 ```
 
 Boundary checks: 4,999 is Low; 5,000 and 10,000 are Medium; 10,001 is High; null is Unknown.
 
-Non-destructive QGIS test: paste the expression into the expression preview, temporarily replace every `"POP_TOTAL"` reference with `4999`, `5000`, `10000`, `10001`, or `NULL`, and read the preview result for each test. Do not save the literal test expressions to the layer.
+Non-destructive QGIS test: paste the expression into the expression preview, temporarily replace every `"population_2024"` reference with `4999`, `5000`, `10000`, `10001`, or `NULL`, and read the preview result for each test. Do not save the literal test expressions to the layer.
+
+These thresholds are training rules only and are not an official planning classification.
 
 ## Population density
 
-Create a decimal field named `POP_DENS`.
+The following expression belongs to the reusable synthetic QGIS project used by later activities. Create a decimal field named `POP_DENS`.
 
 ```qgis
 CASE
@@ -65,10 +69,10 @@ This checks the synthetic format only. Real LGU codes require the official codin
 "STATUS" = 'Needs Inspection'
 ```
 
-## Known bad expression
+## ACT02 known bad expression
 
 ```qgis
-if("POP_TOTAL" <= 5000, 'Low', if("POP_TOTAL" <= 10000, 'Medium', 'High'))
+if("population_2024" <= 5000, 'Low', if("population_2024" <= 10000, 'Medium', 'High'))
 ```
 
-This expression classifies 5,000 as Low, which conflicts with the activity rule. It also classifies null as High. The corrected `CASE` expression above resolves both problems.
+This expression classifies 5,000 as Low, which conflicts with the ACT02 exercise rule. It also classifies null as High. The corrected `CASE` expression above resolves both problems.
