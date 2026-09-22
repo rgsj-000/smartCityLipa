@@ -1,0 +1,14 @@
+row_or_barangay,field,issue_type,raw_value,expected_check,teaching_point
+Banaybanay,internet_access_pct_synth,Missing value,,"Ask whether blank means unknown, zero, or not collected",Missingness semantics
+Latag,evacuation_capacity_synth,Missing value,,Check against center count and source record,Cross-field consistency
+Poblacion Barangay 7,improved_water_access_pct_synth,Missing value,,Do not replace without basis,Missing data handling
+San Salvador,avg_emergency_response_min_synth,Missing value,,Identify required follow-up,Completeness
+Bulaklakan,urban_rural,Inconsistent case,rural,Compare against controlled domain,Category normalization
+Pinagkawitan,flood_exposure_class_synth,Inconsistent case,VERY HIGH,Normalize controlled category,Controlled vocabulary
+Sampaguita,data_status_synth,Inconsistent case,Needs review,Compare with approved values,Controlled vocabulary
+Tanguay,landslide_exposure_class_synth,Abbreviation,Mod.,Determine whether it means Moderate,Ambiguous coding
+Malitlit,solid_waste_collection_coverage_pct_synth,Out of range,104.5,Percent should usually be 0 to 100,Range validation
+Poblacion Barangay 11,flood_incidents_2025_synth,Impossible value,-1,Counts should not be negative,Domain validation
+San Guillermo,last_updated_synth,Date format mismatch,09/14/2026,Normalize date format after validating interpretation,Date parsing
+Pagolingin Bata,barangay_name,Trailing whitespace,Pagolingin Bata ,Trim text before joins,Join key hygiene
+Poblacion Barangay 9-A,estimated_households,Suspicious value,Unusually high households relative to population,Flag for source verification; do not auto-correct,Plausibility check
