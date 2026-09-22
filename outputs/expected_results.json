@@ -1,7 +1,11 @@
 {
-  "training_data_status": "synthetic_training_only",
+  "training_data_status": "mixed_reference_and_synthetic_training_data",
   "accountability_statement": "AI assists. QGIS verifies. People decide.",
   "ACT02": {
+    "dataset": "data/raw/ACT01_barangay_profile_RAW.csv",
+    "source_field": "population_2024",
+    "output_field": "population_band_synth",
+    "classification_note": "Low, Medium, and High are training-only exercise bands.",
     "boundary_tests": {
       "4999": "Low",
       "5000": "Medium",
@@ -9,7 +13,25 @@
       "10001": "High",
       "null": "Unknown"
     },
-    "verification_method": "Use the QGIS expression preview, temporarily substitute each literal for POP_TOTAL, read the preview result, and do not save the literal tests."
+    "representative_records": {
+      "Adya": {
+        "population_2024": 2144,
+        "expected_band": "Low"
+      },
+      "Anilao": {
+        "population_2024": 5019,
+        "expected_band": "Medium"
+      },
+      "Latag": {
+        "population_2024": 9230,
+        "expected_band": "Medium"
+      },
+      "Balintawak": {
+        "population_2024": 19063,
+        "expected_band": "High"
+      }
+    },
+    "verification_method": "Use the QGIS expression preview, temporarily substitute each literal for population_2024, read the preview result, and do not save the literal tests. Run the final expression on an editable working copy of the ACT01 profile and keep the raw CSV unchanged."
   },
   "ACT05": {
     "method": "Polygon bounding-box intersection for the supplied rectangular synthetic layers",
