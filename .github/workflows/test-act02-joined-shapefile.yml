@@ -1,0 +1,28 @@
+name: Test ACT02 Joined Shapefile
+
+on:
+  push:
+    branches:
+      - act02-joined-shapefile
+    paths:
+      - tests/test_act02_joined_shapefile.py
+      - scripts/build_act02_joined_shapefile.py
+      - .github/workflows/test-act02-joined-shapefile.yml
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install test dependencies
+        run: python -m pip install --upgrade pip pytest geopandas pyogrio
+
+      - name: Run ACT02 joined shapefile tests
+        run: pytest -q tests/test_act02_joined_shapefile.py
