@@ -22,7 +22,8 @@
         "data/raw/ACT01_service_requests_SYNTHETIC.csv",
         "data/reference/ACT01_barangay_profile_REFERENCE_CLEAN.csv",
         "data/reference/ACT01_data_dictionary.csv",
-        "facilitator/ACT01_facilitator_issue_key.csv"
+        "facilitator/ACT01_facilitator_issue_key.csv",
+        "facilitator/ACT01_Data_Dictionary_and_Facilitator_Key.xlsx"
       ],
       "dataset_documentation": "docs/ACT01_DATASETS.md"
     },
@@ -94,6 +95,7 @@
     "data_dictionary": "data/reference/data_dictionary.csv",
     "act01_data_dictionary": "data/reference/ACT01_data_dictionary.csv",
     "act01_dataset_guide": "docs/ACT01_DATASETS.md",
+    "act01_facilitator_workbook": "facilitator/ACT01_Data_Dictionary_and_Facilitator_Key.xlsx",
     "expressions": "workflows/qgis_expressions.md",
     "prompt_library": "prompts/ai_gis_prompt_library.md"
   }
