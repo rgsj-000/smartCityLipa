@@ -1,0 +1,99 @@
+name: Build ACT03 GeoPackage
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - scripts/build_act03_lipa_boundary.py
+      - data/act03/ACT03_lipa_barangays_PSA_2024.csv
+      - data/act03/ACT03_facilities_SYNTHETIC.geojson
+      - data/act03/ACT03_roads_SYNTHETIC.geojson
+      - data/act03/ACT03_flood_hazard_SYNTHETIC.geojson
+      - data/act03/requirements-act03.txt
+      - .github/workflows/build-act03-geopackage.yml
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r data/act03/requirements-act03.txt
+
+      - name: Build ACT03 training GeoPackage
+        run: python scripts/build_act03_lipa_boundary.py --repo-root .
+
+      - name: Verify ACT03 GeoPackage
+        run: |
+          python - <<'PY'
+          import sqlite3
+          from pathlib import Path
+          import geopandas as gpd
+
+          path = Path('data/act03/generated/ACT03_Lipa_Training_UTM51N.gpkg')
+          assert path.exists(), path
+
+          con = sqlite3.connect(path)
+          try:
+              assert con.execute('PRAGMA integrity_check').fetchone()[0] == 'ok'
+              layers = {
+                  row[0] for row in con.execute(
+                      "SELECT table_name FROM gpkg_contents WHERE data_type='features'"
+                  )
+              }
+              expected = {
+                  'lipa_barangays_reference',
+                  'facilities_synthetic',
+                  'roads_synthetic',
+                  'flood_hazard_synthetic',
+              }
+              assert expected.issubset(layers), (expected, layers)
+          finally:
+              con.close()
+
+          barangays = gpd.read_file(path, layer='lipa_barangays_reference')
+          facilities = gpd.read_file(path, layer='facilities_synthetic')
+          roads = gpd.read_file(path, layer='roads_synthetic')
+          flood = gpd.read_file(path, layer='flood_hazard_synthetic')
+
+          assert len(barangays) == 72, len(barangays)
+          assert len(facilities) == 24, len(facilities)
+          assert len(roads) == 8, len(roads)
+          assert len(flood) == 4, len(flood)
+
+          for layer in (barangays, facilities, roads, flood):
+              assert layer.crs is not None
+              assert layer.crs.to_epsg() == 32651, layer.crs
+
+          assert int(barangays['population_2024'].sum()) == 387392
+          checks = dict(zip(barangays['barangay_name'], barangays['population_2024']))
+          assert checks['Adya'] == 2144
+          assert checks['Anilao'] == 5019
+          assert checks['Latag'] == 9230
+          assert checks['Balintawak'] == 19063
+          print('ACT03 GeoPackage verification passed.')
+          PY
+
+      - name: Commit generated GeoPackage
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/act03/generated/ACT03_Lipa_Training_UTM51N.gpkg
+          git diff --cached --quiet && exit 0
+          git commit -m "Add ACT03 Lipa training GeoPackage"
+          git push origin HEAD:main
